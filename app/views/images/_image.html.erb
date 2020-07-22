@@ -1,0 +1,14 @@
+<div class="col-4">
+    <div class="card mt-4" style="width: 90%;">
+        <%= image_tag image.picture.thumb.url, class: 'card-img-top'%>
+        <div class="card-body">
+            <p class="card-text"><%= image.description%></p>
+            <%= link_to t('.edit_link'), edit_image_path(image), class: 'btn btn-primary' %>
+            <%= link_to t('.delete_link'), image, method: :delete, data: { confirm: 'sure?'}, class: 'btn btn-danger' %>
+            <%= link_to t('.info_link'), image, class: 'btn btn-info' %>
+        </div>
+    </div>
+</div>
+
+
+

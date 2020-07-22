@@ -1,0 +1,20 @@
+    
+<div class="row ml-4">
+    <%- @all_images.each do |image|  %>
+    <div class="col-md-4 ">
+        <div class="card mt-4" style="width: 90%">
+            <%= image_tag image.picture.thumb.url, class: 'card-img-top'%>
+            <div class="card-body">
+                <p class="card-text"><%= image.description%></p>
+                <%= link_to t('.info_link'), image, class: 'btn btn-info' %>
+            </div>
+        </div>
+    </div>
+    <% end %>
+    <div class="apple_pagination">
+    <%= will_paginate @all_images %>
+    </div>
+    
+</div>
+    
+

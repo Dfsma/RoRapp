@@ -1,0 +1,54 @@
+<div>
+    <img src="assets/default.jpg" style="width: 20%" class="rounded float-left ml-5" alt="...">
+    <ul class="nav" style="margin-left: 35%">
+        <li>
+        <p> <%= @current_user.name %> </p>
+        </li>
+    </ul>
+    <ul class="nav" style="margin-left: 35%">
+        <%- if @images.count != 0%>
+        <li>
+            <p><strong><%= @images.count %> Publicaciones</strong></p>
+        </li>
+        <% else %>
+        <li>
+            <p><strong>Tienes 0 Publicaciones</strong></p>
+            <a href="/images/new">Crea tu primera publicacion! </a>
+        </li>
+        <% end %>
+    </ul>
+<div>
+
+<div class="row mt-5 ml-2">
+    <%- if @current_user.permission_level == 1 %>
+        <%- @all_images.each do |image|  %>
+        <div class="col-4">
+            <div class="card mt-4" style="width: 90%;">
+                <%= image_tag image.picture.thumb.url, class: 'card-img-top'%>
+                <div class="card-body">
+                    <p class="card-text"><%= image.description%></p>
+                    <%= link_to t('.edit_link'), edit_image_path(image), class: 'btn btn-primary' %>
+                    <%= link_to t('.delete_link'), image, method: :delete, data: { confirm: 'sure?'}, class: 'btn btn-danger' %>
+                    <%= link_to t('.info_link'), image, class: 'btn btn-info' %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    <% else %>
+        <%- @images.each do |image|  %>
+        <div class="col-4">
+            <div class="card mt-4" style="width: 90%;">
+                <%= image_tag image.picture.thumb.url, class: 'card-img-top'%>
+                <div class="card-body">
+                    <p class="card-text"><%= image.description%></p>
+                    <%= link_to t('.edit_link'), edit_image_path(image), class: 'btn btn-primary' %>
+                    <%= link_to t('.delete_link'), image, method: :delete, data: { confirm: 'sure?'}, class: 'btn btn-danger' %>
+                    <%= link_to t('.info_link'), image, class: 'btn btn-info' %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    <% end %>
+    
+</div>
+    

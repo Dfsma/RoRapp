@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Community</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+    <div class="container mt-4">
+        
+      <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">INSTA-RAILS </a>
+      
+        <ul class="nav justify-content-end">
+
+          <%- if user_signed_in?%>
+            <a class="nav-link disabled text-info" href="#">Bienvenido <%= current_user.name  %> </a>
+            <li class="nav-item">
+              <%= link_to 'Mi Perfil', images_path , method: :get, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            </li>
+            
+          <% else %>
+            <li class="nav-item">
+              <%= link_to 'Iniciar Sesión', new_user_session_path , class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Registrarse', new_user_registration_path , class: 'nav-link' %>
+            </li>
+          <% end %>
+
+        </ul>
+       
+      </nav>
+
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      <%= yield %>  
+    </div>
+    
+  </body>
+</html>

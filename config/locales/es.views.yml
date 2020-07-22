@@ -1,0 +1,14 @@
+es:
+  images:
+    new:
+      form:
+        error: 'Ha ocurrido un error al intentar crear tu %{model}'
+    index:
+      edit_link: 'Editar'
+      delete_link: 'Eliminar'
+      info_link: 'Leer más'
+  home:
+    index:
+      edit_link: 'Editar'
+      delete_link: 'Eliminar'
+      info_link: 'Leer más'
