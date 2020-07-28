@@ -5,12 +5,13 @@ class Ability
 
   def initialize(user)
 
-    can :read, Image  # start by defining rules for all users, also not logged ones
-    return unless user.present?
-    can :manage, Image, user_id: user.id # if the user is logged in can manage it's own posts
-    can :create, Image # logged in users can also create comments
-    return unless user.permission_level == 1
-    can :manage, :all # finally we give all remaining permissions only to the admins
+    can :read, :all # permissions for every user, even if not logged in    
+    if user.present?  # additional permissions for logged in users (they can manage their posts)
+      can :manage, Image, user_id: user.id 
+      if user.permission_level == 1  # additional permissions for administrators
+        can :manage, :all
+      end
+    end
 
    
     # Define abilities for the passed in user here. For example:

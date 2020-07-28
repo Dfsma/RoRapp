@@ -16,6 +16,8 @@ gem 'jquery-rails'
 gem 'cancancan'
 #Gem for Pagination
 gem 'will_paginate'
+#Debug Gem
+gem 'pry-byebug'
 
 
 

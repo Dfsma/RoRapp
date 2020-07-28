@@ -35,7 +35,9 @@ class ImagesController < ApplicationController
     end
 
     def update
+        
         @image.update image_params
+      
         redirect_to images_path
     end
 
