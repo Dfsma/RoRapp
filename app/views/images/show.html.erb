@@ -7,3 +7,14 @@
         <p class="card-text"><%= @image.description %></p>
   </div>
 </div>
+<section class="section comments pt-4">
+    <div class="container">
+        <h4 class="subtitle is-5"><strong><%= @image.comments.count %></strong> Comments</h4>
+        <%= render @image.comments %>
+        <div class="comment-form">
+            <hr />
+            <h3 class="subtitle is-3">Deja un comentario</h3>
+            <%= render 'comments/form' %>
+        </div>
+    </div>
+</section>
