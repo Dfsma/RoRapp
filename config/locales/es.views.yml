@@ -12,3 +12,6 @@ es:
       edit_link: 'Editar'
       delete_link: 'Eliminar'
       info_link: 'Leer más'
+  comments:
+    _form:
+      name: 'nombre'
