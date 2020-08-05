@@ -21,6 +21,7 @@ class ImagesController < ApplicationController
     def create
         @image = current_user.images.new image_params
         if @image.save
+            ImageMailer.with(image: @image).image_notification.deliver
             return redirect_to images_path
         end
 

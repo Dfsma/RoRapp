@@ -1,0 +1,25 @@
+<html>
+   
+   <head>
+      <meta content = 'text/html; charset = UTF-8' http-equiv = 'Content-Type' />
+   </head>
+   
+   <body>
+      <h1>Hey Administrador!</h1>
+      
+      <p>
+         El usuario <%= @image.user_id %> creo un nuevo post!
+         <br>
+      </p>
+      
+      <p>
+
+        Descripcion del post: <%= @image.description  %><br>
+        Fecha: <%= @image.created_at  %><br>
+    
+      </p>
+      
+      <p>Hasta Luego!</p>
+      
+   </body>
+</html>
