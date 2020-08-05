@@ -7,12 +7,12 @@
         
         <%= f.form_error %>
         
-        <%= f.label :description, class: 'h5' %>
+        <%= f.label :description, class: 'h5 text-white' %>
         <%= f.text_field :description, class: 'form-control' %>
         <%= f.field_error :description %>
         <br>
-        <%= f.label :picture, class: 'h5 mt-4' %>
-        <%= f.file_field :picture%>
+        <%= f.label :picture, class: 'h5 mt-4 text-white' %>
+        <%= f.file_field :picture, class: 'text-white'%>
         <br>
         
         <%= f.submit 'Enviar', class: 'btn btn-dark mt-4' %>

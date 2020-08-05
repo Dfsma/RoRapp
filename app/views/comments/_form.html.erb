@@ -5,10 +5,10 @@ collection.build(attributes = {}, …) Returns one or more new objects of the co
 
 <div class="form-group" style="margin: 5%">
     <%= simple_form_for([@image, @image.comments.build]) do |f| %>
-        <%= f.label :nombre, class: 'h5' %>
+        <%= f.label :nombre, class: 'h5 text-light' %>
         <%= f.text_field :name, class: 'form-control' %>
         <br>
-        <%= f.label :comentario, class: 'h5 mt-4' %>
+        <%= f.label :comentario, class: 'h5 mt-4 text-light' %>
         <%= f.text_area :comment, class: 'form-control'%>
         <br>
         <%= f.button :submit, 'Ok', class: "btn btn-dark mt-4" %>

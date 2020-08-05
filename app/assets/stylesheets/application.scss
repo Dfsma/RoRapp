@@ -14,7 +14,16 @@
         
         @import "bootstrap";
         body {
-            background-color: whitesmoke;
+            background-color: black;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        p {
+            color: white;
         }
         
         nav {
@@ -23,11 +32,28 @@
         
         .card {
             border-radius: 10px;
+            background-color: #393534;
+        }
+        
+        .card-text {
+            color: white;
+        }
+        
+        .field {
+            color: white;
+        }
+        
+        .card-title {
+            color: white;
+        }
+        
+        .form-label-group {
+            color: white;
         }
         
         .apple_pagination {
-            background: whitesmoke;
-            border: 1px solid whitesmoke;
+            background: black;
+            border: 1px black;
             text-align: center;
             padding: 1em;
             cursor: default;
