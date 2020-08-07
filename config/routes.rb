@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     confirmations: 'confirmations'
+    resources :users, only: [:index, :create, :update, :delete, :show]
   }
+  
+
   get 'home/index'
   resources :images do
     resources :comments
