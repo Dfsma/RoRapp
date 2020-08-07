@@ -4,7 +4,16 @@
 <div class="card mx-auto " style="width: 50%;">
     <%= image_tag @image.picture.medium.url, class: 'card-img-top' %>
     <div class="card-body">
-        <p class="card-text"><%= @image.description %></p>
+        <p class="card-text"><%= @image.description %></p><hr class="bg-light">
+        <h5 class='pt-2'>
+            <div id="like-count text-light">
+                <%= render 'images/likes', image: @image %><i class="fa fa-heart"></i>
+            </div>
+             <div id="like-link">
+                <%= render 'images/like_link', image: @image %>
+            </div>
+            <hr>
+        </h5>
   </div>
 </div>
 <section class="section comments pt-4">

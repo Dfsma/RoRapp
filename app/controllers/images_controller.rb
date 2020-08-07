@@ -1,10 +1,10 @@
 class ImagesController < ApplicationController
-
+    respond_to :js, :html, :json
     load_and_authorize_resource param_method: :image_params
 
     #before_action :set_image, only: [:show, :edit, :update, :destroy]
     
-
+    
 
     def index
         if user_signed_in?
@@ -46,9 +46,21 @@ class ImagesController < ApplicationController
         @image.destroy
         redirect_to images_path
     end
+
+    def like
+        
+        if current_user.voted_for? @image
+            @image.unliked_by current_user
+        else
+            @image.liked_by current_user
+        end
+        redirect_to image_path(@image)
+
+       
+    end  
     
-    private
     
+    private    
     def image_params
         params.require(:image).permit :description, :picture
     end
@@ -56,4 +68,6 @@ class ImagesController < ApplicationController
     def set_image
         @image = Image.find params[:id]
     end
+
+    
 end

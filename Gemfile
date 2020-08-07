@@ -2,8 +2,11 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
+#Create Private Variables
 gem 'figaro', '~> 1.2'
+
 gem 'dotenv-rails', groups: [:development, :test]
+# Mail Gem
 gem 'mailgun_rails'
 #Gem for Auth
 gem 'devise'
@@ -20,9 +23,14 @@ gem 'cancancan'
 gem 'will_paginate'
 #Debug Gem
 gem 'pry-byebug'
+#Style Gem
 gem 'bulma-rails', '~> 0.9.0'
+#Forms Gem
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
-
+#Like and Ulike Gem
+gem 'acts_as_votable'
+gem 'popper_js', '~> 1.14.5'
+gem "font-awesome-rails"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

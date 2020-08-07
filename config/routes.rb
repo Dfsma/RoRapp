@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'home/index'
   resources :images do
     resources :comments
+    member do
+      put 'like' => 'images#like'
+      
+    end
   end
 
   root to: "home#index"
