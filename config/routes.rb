@@ -3,9 +3,8 @@ Rails.application.routes.draw do
     confirmations: 'confirmations'
     
   }
-  
-  resources :users, only: [:index, :create, :update, :delete, :show]
-  
+  resource :users
+
   get 'home/index'
   resources :images do
     resources :comments
