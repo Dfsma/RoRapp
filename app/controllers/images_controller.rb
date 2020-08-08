@@ -2,7 +2,7 @@ class ImagesController < ApplicationController
     respond_to :js, :html, :json
     load_and_authorize_resource param_method: :image_params
 
-    #before_action :set_image, only: [:show, :edit, :update, :destroy]
+    before_action :set_image, only: [:show, :edit, :update, :destroy]
     
     
 

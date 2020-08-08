@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
+  devise_for :users, except: :create, path: '', path_names: { sign_in: 'login', sign_out: 'signed-out' },
+    controllers: {
     confirmations: 'confirmations'
     
   }
