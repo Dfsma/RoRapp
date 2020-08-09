@@ -36,7 +36,7 @@ class ImagesController < ApplicationController
 
     def update
         @image.update image_params
-        redirect_to images_path(@image)
+        redirect_to images_path
     end
 
     def destroy
