@@ -22,9 +22,8 @@ class ImagesController < ApplicationController
         @image = current_user.images.new image_params
         if @image.save
             ImageMailer.with(image: @image).image_notification.deliver
-            return redirect_to images_path
         end
-
+        return redirect_to images_path(@image)
         render :new
     end
 
@@ -36,31 +35,25 @@ class ImagesController < ApplicationController
     end
 
     def update
-        
         @image.update image_params
-      
-        redirect_to images_path
+        redirect_to images_path(@image)
     end
 
     def destroy
         @image.destroy
-        redirect_to images_path
+        redirect_to images_path(@image)
     end
 
     def like
-        
         if current_user.voted_for? @image
             @image.unliked_by current_user
         else
             @image.liked_by current_user
         end
         redirect_to image_path(@image)
-
-       
     end  
     
     
-    private    
     def image_params
         params.require(:image).permit :description, :picture
     end
