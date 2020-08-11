@@ -6,4 +6,5 @@ class User < ApplicationRecord
          :confirmable
   has_many :images
   acts_as_voter
+
 end

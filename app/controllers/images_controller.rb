@@ -20,15 +20,17 @@ class ImagesController < ApplicationController
 
     def create
         @image = current_user.images.new image_params
-        @image.save
-        ImageMailer.with(image: @image).image_notification.deliver
+        if @image.save
+            return redirect_to @image
+        else
+            render :new
+        end
         
-        return redirect_to images_path(@image)
-        render :new
+      
     end
 
     def show
-    
+
     end
 
     def edit
@@ -52,15 +54,16 @@ class ImagesController < ApplicationController
         end
         redirect_to image_path(@image)
     end  
+    def set_image
+        @image = Image.find params[:id]
+    end
     
-    
+    private
     def image_params
         params.require(:image).permit :description, :picture
     end
 
-    def set_image
-        @image = Image.find params[:id]
-    end
+
 
     
 end

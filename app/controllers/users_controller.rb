@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    respond_to :js, :html, :json
+    load_and_authorize_resource param_method: :user_params
     before_action :set_user, only: [:show, :edit, :update] # probably want to keep using this
     
     # GET /users
@@ -34,13 +36,14 @@ class UsersController < ApplicationController
       end
     end
   
-    private
+    
       # Use callbacks to share common setup or constraints between actions.
       def set_user
         @user = User.find(params[:id])
       end
   
       # Never trust parameters from the scary internet, only allow the white list through.
+      private
       def user_params
         params.require(:user).permit(:role, :user_name)
       end
