@@ -1,5 +1,5 @@
 class Image < ApplicationRecord
-    after_create :send_new_post_email
+    #after_create :send_new_post_email
     mount_uploader :picture, PictureUploader
     validates :description, presence: true 
     belongs_to :user

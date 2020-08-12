@@ -21,6 +21,9 @@
           <%- if user_signed_in?%>
             <a class="nav-link disabled text-info" href="#">Bienvenido <%= current_user.name  %> </a>
             <li class="nav-item">
+              <a class="nav-link" href="/images/new">Nuevo Post</a>
+            </li>
+            <li class="nav-item">
               <%= link_to 'Mi Perfil', images_path , method: :get, class: 'nav-link' %>
             </li>
             <li class="nav-item pt-2">
