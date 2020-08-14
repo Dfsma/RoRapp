@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  
   get 'users/index'
   get 'home/index'
   root to: "home#index"
+  
+
 
   devise_for :users, controllers: {
     confirmations: 'confirmations'
-    
   }
   resource :users
 
@@ -16,6 +18,6 @@ Rails.application.routes.draw do
       
     end
   end
-  
+  get '*path' => redirect('/')
   default_url_options :host => "localhost:3000"
 end

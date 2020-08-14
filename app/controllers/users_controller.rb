@@ -15,7 +15,9 @@ class UsersController < ApplicationController
   
     end
 
+    def create
     
+    end
   
     # GET /users/1/edit
     def edit
