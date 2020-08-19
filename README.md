@@ -21,4 +21,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Devise Gem:
+  1. Add Devise to GemFile.
+  2. Create Models and Migrations.
